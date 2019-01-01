@@ -22,3 +22,7 @@ set t_Co=256 "256 color
 
 " Rust-specific options
 au filetype rust set matchpairs+=<:>
+
+" Markdown-specific options
+au filetype markdown set colorcolumn= "no highlit column
+aut filetype markdown set spell "spell-check
