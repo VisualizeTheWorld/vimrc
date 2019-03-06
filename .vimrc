@@ -1,3 +1,32 @@
+" Setting up vim-plug
+" Adapted https://github.com/jpdoyle/vimrc
+let plugInstalled=1
+let plug_file=expand('~/.vim/autoload/plug.vim')
+if !filereadable(plug_file)
+    echo "Installing vim-plug.."
+    echo ""
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+\          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let plugInstalled=0
+endif
+call plug#begin('~/.vim/plugged')
+    " Dependencies
+    Plug 'let-def/vimbufsync' " For Coquille
+
+    " Verifast syntax highlighting
+    Plug 'VisualizeTheWorld/vim-verifast'
+
+    " Makes vim a coq IDE
+    Plug 'jpdoyle/coquille', {'for':'coq', 'branch': 'pathogen-bundle'}
+
+    if plugInstalled == 0
+        echo "Installing plugins"
+        echo ""
+        :PlugInstall
+    endif
+call plug#end()
+
+" Not plugins
 syntax on
 set tabstop=2 softtabstop=2 shiftwidth=2 "2 spaces per tab
 set autoindent
@@ -10,7 +39,7 @@ set backspace=indent,eol,start
 
 set formatoptions=tcroql "extend comments
 
-set hlsearch "hilight search results
+set hlsearch "highlight search results
 
 set colorcolumn=81 "mark the column at which lines should terminate
 set cursorline "highlight the current line
