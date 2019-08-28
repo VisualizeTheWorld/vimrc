@@ -16,8 +16,14 @@ call plug#begin('~/.vim/plugged')
     " Verifast syntax highlighting
     Plug 'VisualizeTheWorld/vim-verifast'
 
+    " Agda syntax highlighting
+    Plug 'derekelkins/agda-vim'
+
+    " ARM assembly syntax highlighting
+    Plug 'ARM9/arm-syntax-vim'
+
     " Makes vim a coq IDE
-    Plug 'jpdoyle/coquille', {'for':'coq', 'branch': 'pathogen-bundle'}
+    Plug 'splintah/coquille', {'for':'coq', 'branch': 'pathogen-bundle'}
 
     if plugInstalled == 0
         echo "Installing plugins"
@@ -33,6 +39,8 @@ set autoindent
 set smarttab
 set expandtab "tabs as spaces
 
+let maplocalleader="," "for some plugins
+
 filetype indent on
 
 set backspace=indent,eol,start
@@ -44,6 +52,7 @@ set hlsearch "highlight search results
 set colorcolumn=81 "mark the column at which lines should terminate
 set cursorline "highlight the current line
 set relativenumber "line numbers relative to current line
+set number         "w/ absolute line number on current line
 
 " Color scheme
 colorscheme zellner
@@ -52,6 +61,14 @@ set t_Co=256 "256 color
 " Rust-specific options
 au filetype rust set matchpairs+=<:>
 
+" Text-specific options
+au filetype text set colorcolumn= "no highlit column
+
 " Markdown-specific options
 au filetype markdown set colorcolumn= "no highlit column
 aut filetype markdown set spell "spell-check
+
+" Python-specific options
+au filetype python set colorcolumn= "no highlit column
+
+
