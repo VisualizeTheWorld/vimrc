@@ -38,10 +38,9 @@ set tabstop=2 softtabstop=2 shiftwidth=2 "2 spaces per tab
 set autoindent
 set smarttab
 set expandtab "tabs as spaces
+filetype indent on
 
 let maplocalleader="," "for some plugins
-
-filetype indent on
 
 set backspace=indent,eol,start
 
@@ -70,5 +69,5 @@ aut filetype markdown set spell "spell-check
 
 " Python-specific options
 au filetype python set colorcolumn= "no highlit column
-
+let g:python_recommended_style = 0 "delete PEP-8
 
