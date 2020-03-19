@@ -34,7 +34,7 @@ call plug#end()
 
 " Not plugins
 syntax on
-set tabstop=2 softtabstop=2 shiftwidth=2 "2 spaces per tab
+set tabstop=4 softtabstop=4 shiftwidth=4 "4 spaces per tab
 set autoindent
 set smarttab
 set expandtab "tabs as spaces
