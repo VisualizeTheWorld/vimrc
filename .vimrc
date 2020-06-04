@@ -71,6 +71,7 @@ au filetype markdown set colorcolumn= "no highlit column
 aut filetype markdown set spell "spell-check
 
 " Python-specific options
+au BufRead,BufNewFile *.gpy set filetype=python "MULTI Python
 au filetype python set colorcolumn= "no highlit column
 let g:python_recommended_style = 0 "delete PEP-8
 
