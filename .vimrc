@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
     " Agda syntax highlighting
     Plug 'derekelkins/agda-vim'
 
+    " Idris syntax highlighting
+    Plug 'idris-hackers/idris-vim'
+
     " ARM assembly syntax highlighting
     Plug 'ARM9/arm-syntax-vim'
 
@@ -54,7 +57,7 @@ set relativenumber "line numbers relative to current line
 set number         "w/ absolute line number on current line
 
 " Color scheme
-colorscheme zellner
+colorscheme delek
 set t_Co=256 "256 color
 
 " Rust-specific options
@@ -71,3 +74,8 @@ aut filetype markdown set spell "spell-check
 au filetype python set colorcolumn= "no highlit column
 let g:python_recommended_style = 0 "delete PEP-8
 
+" Make Fortran highlighting better
+let fortran_free_source=1
+let fortran_have_tabs=1
+let fortran_more_precise=1
+let fortran_do_enddo=1
