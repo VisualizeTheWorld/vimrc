@@ -37,10 +37,10 @@ call plug#end()
 
 " Not plugins
 syntax on
-set tabstop=4 softtabstop=4 shiftwidth=4 "4 spaces per tab
+set expandtab shiftwidth=4 softtabstop=4 "4 spaces per tab, insert spaces instaed of tabs
+set tabstop=8 "display existing tabs as 8 spaces
 set autoindent
 set smarttab
-set expandtab "tabs as spaces
 filetype indent on
 
 let maplocalleader="," "for some plugins
@@ -83,3 +83,6 @@ let fortran_do_enddo=1
 
 " Prolog-specific options
 au BufRead,BufNewFile *.pl,*.plt set filetype=prolog "I don't use Perl
+
+" Assembly-specific options
+au BufRead,BufNewFile *.arm set filetype=arm
