@@ -37,10 +37,11 @@ call plug#end()
 
 " Not plugins
 syntax on
-set tabstop=4 softtabstop=4 shiftwidth=4 "4 spaces per tab
+set tabstop=8 softtabstop=4 shiftwidth=4 "4 spaces per tab, but interpret tabs
+set autoindent                           " by others as 8 spaces
 set autoindent
 set smarttab
-set expandtab "tabs as spaces
+set expandtab "pressing tab inserts spaces
 filetype indent on
 
 let maplocalleader="," "for some plugins
